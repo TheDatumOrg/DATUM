@@ -14528,3 +14528,10 @@ iframe {
     left: 0;
     z-index: -1;
   }
+
+  #fake-page-head {
+    height: 100px;  
+    background-color: #222; 
+    position: relative; 
+    z-index: -1; 
+  }
