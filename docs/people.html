@@ -49,9 +49,9 @@ http://themeforest.net/user/owwwlab/
     <title>DATUM LAB</title>
   </head>
   <!-- #####End head-->
-  <body class="sticky-header bg-pattern ol-particles">
-    <!-- <div id="wrapper" class="regular-layout"> -->
-      <div id="wrapper" class="boxed-layout">
+  <body class="fullwidth sticky-header">
+    <div id="wrapper" class="regular-layout">
+    <!-- <div id="wrapper" class="boxed-layout"> -->
       <!-- #####Begin Header-->
       <header id="header" class=" dark trans">
         <div class="head-main">
@@ -119,82 +119,15 @@ http://themeforest.net/user/owwwlab/
       <!-- #####Begin contents-->
       <section id="contents">
         <!-- #####Begin page head-->
-        <div class="page-head h-500 particles center-it parallax-layer ov-blue-alpha-50 dark" data-img-src="../../assets/img/backgrounds/10.jpg">
-          <div class="container">
-            <div class="tb-vcenter-wrapper">
-              <div class="title-wrapper vcenter parallax-layer" data-parallax-mode="mode-header-content">
-                <h1 class="title">People directory</h1>
-                <h2 class="description">Another style to represent the awesome people of your organization</h2>
-              </div>
-              <div class="breadcrumb-wrapper vcenter parallax-layer" data-parallax-mode="mode-header-content">
-                <ul class="breadcrumb">
-                  <li><a href="#"><i class="oli oli-home"></i></a></li>
-                  <li><a href="#">publication</a></li>
-                  <li><a href="#">publication type</a></li>
-                  <li>learning environment</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div id="fake-page-head"></div>
         <!-- #####End page head
         -->
         <section class="page-contents">
           <!-- #####Begin main area-->
           <section id="main-area">
-            <section class="section section-narrow">
+            <section id="people" class="section" style="padding: 120px 0 10px 0;">
               <div class="container">
-                <div class="row pull-up-130 pull-up-xs-0">
-                  <div class="col-sm-4">
-                    <div class="featured-person"><a href="#"><img src="assets/img/people/05.jpg"></a><a href="#">
-                        <h3>Dr. John Doe</h3></a>
-                      <p>Phasellus lectus sem</p>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="featured-person"><a href="#"><img src="assets/img/people/06.jpg"></a><a href="#">
-                        <h3>Dr. John Doe</h3></a>
-                      <p>Phasellus lectus sem</p>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="featured-person"><a href="#"><img src="assets/img/people/07.jpg"></a><a href="#">
-                        <h3>Dr. John Doe</h3></a>
-                      <p>Phasellus lectus sem</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section class="section pad-0">
-              <div class="inline-filters">
-                <div class="container">
-                  <div class="form-inline text-center">
-                    <div class="form-group">
-                      <div class="title">Search</div>
-                    </div>
-                    <div class="form-group">
-                      <input type="text" placeholder="Search" class="form-control">
-                    </div>
-                    <div class="form-group">
-                      <select class="form-control">
-                        <option>category #1</option>
-                        <option>category #2</option>
-                        <option>category #3</option>
-                        <option>category #4</option>
-                        <option>category #5</option>
-                        <option>category #6</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <input type="submit" value="Submit" class="form-control btn btn-small btn-skin-red">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section class="section p-top-80">
-              <div class="container">
+                <h1 style="text-align: center;">Faculty</h1>
                 <!-- #####Begin row with multiple columns-->
                 <div class="row multi-columns-row col-margin-bottom-40">
                   <div class="col-md-4 col-sm-6">
@@ -208,6 +141,12 @@ http://themeforest.net/user/owwwlab/
                     </div>
                     <!-- #####End person card-->
                   </div>
+                  </div>
+                </section>
+                <section id="people" class="section" style="padding: 30px 0 10px 0;">
+                  <div class="container">
+                    <h1 style="text-align: center;">PhD Students</h1>
+                    <div class="row multi-columns-row col-margin-bottom-40">
                   <div class="col-md-4 col-sm-6">
                     <!-- #####Begin person card-->
                     <div class="vc-card boxed hoverable-links mini-card"><a href="#" class="set-bg"> <img src="assets/img/people/02.jpg" alt="people" class="set-me"></a>
@@ -274,6 +213,12 @@ http://themeforest.net/user/owwwlab/
                     </div>
                     <!-- #####End person card-->
                   </div>
+                </div>
+              </section>
+              <section id="people" class="section" style="padding: 30px 0 10px 0;">
+                <div class="container">
+                  <h1 style="text-align: center;">Master Students</h1>
+                  <div class="row multi-columns-row col-margin-bottom-40">
                   <div class="col-md-4 col-sm-6">
                     <!-- #####Begin person card-->
                     <div class="vc-card boxed hoverable-links mini-card"><a href="#" class="set-bg"> <img src="assets/img/people/04.jpg" alt="people" class="set-me"></a>
@@ -352,23 +297,11 @@ http://themeforest.net/user/owwwlab/
                     <!-- #####End person card-->
                   </div>
                 </div>
+                </div>
+                
                 <!-- #####End row with multiple columns-->
-                <div class="sp-blank-100"></div>
-                <!-- #####Begin pagination links-->
-                <nav class="ol-pagination lined-links">
-                  <ul class="pagination">
-                    <li><a href="#">&laquo;</a></li>
-                    <li><a href="#">1</a></li>
-                    <li class="active"><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">&raquo;</a></li>
-                  </ul>
-                </nav>
-                <!-- #####End pagination links-->
-              </div>
             </section>
+            <section id="people" class="section" style="padding: 30px 0 10px 0;"></section>
           </section>
           <!-- #####End main area
           -->
