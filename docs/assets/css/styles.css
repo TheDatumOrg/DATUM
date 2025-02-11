@@ -6398,7 +6398,7 @@ ul#primary-menu li.mega-menu .megamenu-wrapper:after {
     opacity: 0.7;
 }
 .page-head h1, .page-head h2, .page-head h3, .page-head h4, .page-head h5, .page-head h6 {
-    color: #fff;
+    color: #222;
 }
 /*&.set-bg{
 		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);

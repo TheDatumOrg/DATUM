@@ -130,3 +130,7 @@ ul#primary-menu ul.sub-menu{
     opacity: 1;
     transform: translateY(0);
 }
+
+.page-head h1, .page-head h2, .page-head h3, .page-head h4, .page-head h5, .page-head h6 {
+    color: #fff;
+}
