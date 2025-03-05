@@ -134,3 +134,16 @@ ul#primary-menu ul.sub-menu{
 .page-head h1, .page-head h2, .page-head h3, .page-head h4, .page-head h5, .page-head h6 {
     color: #fff;
 }
+
+.sponsors-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+.sponsor img {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+}
