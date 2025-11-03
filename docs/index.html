@@ -138,16 +138,42 @@ http://themeforest.net/user/owwwlab/
           <div id="rev_slider_24_1_wrapper" class="rev_slider_wrapper fullscreen-container">
             <div id="rev_slider_24_1" class="rev_slider fullscreenbanner ol-theme">
               <ul>
-                <li data-transition="fade" data-masterspeed="500">
-                  <div id="particle-background" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></div>
-                  <div id="js-logo" class="logo"></div>
-                  <!-- <h2 data-x="center" data-y="middle" data-voffset="64" data-transform_in="y:[100%];s:1500;e:Power3.easeInOut;" data-transform_out="opacity:0;s:1000;" data-mask_in="x:0px;y:0px;" data-start="500" style="z-index: 5; white-space: nowrap;" class="tp-caption ol-title tp-resizeme">the Data AnalyTics, Understanding, Mining, and Management Lab @ OSU</h2> -->
-                    <h3 id="subtitle" class="animated-subtitle">the Data AnalyTics, Understanding, Mining, and Management Lab @ OSU</h3>
-                    <div class="button-container">
-                    <a id="button" class="animated-button" href="javascript:void(0);" onclick="document.getElementById('main-area').scrollIntoView({ behavior: 'smooth' });">
-                        EXPLORE THE LAB
-                    </a>
+                <li data-transition="fade" data-masterspeed="500" style="position: relative;">
+
+                  <!-- 粒子区域的大容器，负责定位所有背景相关的层 -->
+                  <div id="hero-stage">
+                    <!-- 染色层（在最底下，颜色我们动态调） -->
+                    <div id="particle-tint-layer" class="particle-tint-layer"></div>
+
+                    <!-- 粒子 canvas 的挂载点（particles.js 会往这里塞 <canvas>） -->
+                    <div id="particle-background"></div>
+                  </div>
+
+                  <!-- 左侧控制面板 -->
+                  <div class="bg-control-panel">
+                    <div class="panel-block">
+                      <label>Particle tint</label>
+                      <input id="particle-color-picker" type="color" value="#000000" />
+                      <input id="particle-alpha-slider" type="range" min="0" max="100" value="100" />
                     </div>
+                  </div>
+
+                  <!-- 你的 lab 动画 logo -->
+                  <div id="js-logo" class="logo"></div>
+
+                  <h3 id="subtitle" class="animated-subtitle">
+                    the Data AnalyTics, Understanding, Mining, and Management Lab @ OSU
+                  </h3>
+
+                  <div class="button-container">
+                    <a id="button" class="animated-button"
+                      href="javascript:void(0);"
+                      onclick="document.getElementById('main-area').scrollIntoView({ behavior: 'smooth' });">
+                      EXPLORE THE LAB
+                    </a>
+                  </div>
+
+                </li>
                 <script>
                   window.addEventListener('load', function() {
                       setTimeout(function() {
@@ -161,51 +187,91 @@ http://themeforest.net/user/owwwlab/
             </div>
           </div>
         </div>
-        <script>  // particles
-          window.onload = function() {
-            setTimeout(function() {
-              particlesJS("particle-background", {
-                "particles": {
-                  "number": { "value": 160, "density": { "enable": true, "value_area": 800 } },
-                  "color": { "value": "#ffffff" },
-                  "shape": { "type": "circle" },
-                  "opacity": { "value": 0.1 },
-                  "size": { "value": 3, "random": true },
-                  "line_linked": { "enable": true, "distance": 100, "color": "#ffffff", "opacity": 0.5, "width": 1 },
-                  "move": { "enable": true, "speed": 2, "direction": "none" }
-                },
-                "interactivity": {
-                  "detect_on": "canvas",
-                  "events": {
-                    "onhover": { "enable": true, "mode": "grab" },
-                    "onclick": { "enable": true, "mode": "push" },
-                    "resize": true
-                  },
-                  "modes": {
-                    "grab": { "distance": 100, "line_linked": { "opacity": 0.5 } },
-                    "bubble": { "distance": 400, "size": 40, "duration": 2 },
-                    "repulse": { "distance": 200, "duration": 0.4 },
-                    "push": { "particles_nb": 4 }
-                  }
-                },
-                "retina_detect": true
-              });
+        <script>
+window.addEventListener('load', function() {
 
-              const canvas = document.querySelector("#particle-background > canvas");
-              let opacity = 0;
-              canvas.style.opacity = opacity;
+    // 初始化粒子 (跟之前一样)
+    particlesJS("particle-background", {
+        "particles": {
+            "number": { "value": 160, "density": { "enable": true, "value_area": 800 } },
+            "color": { "value": "#ffffff" },
+            "shape": { "type": "circle" },
+            "opacity": { "value": 0.1 },
+            "size": { "value": 3, "random": true },
+            "line_linked": {
+                "enable": true,
+                "distance": 100,
+                "color": "#ffffff",
+                "opacity": 0.5,
+                "width": 1
+            },
+            "move": { "enable": true, "speed": 2, "direction": "none" }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": { "enable": true, "mode": "grab" },
+                "onclick": { "enable": true, "mode": "push" },
+                "resize": true
+            },
+            "modes": {
+                "grab": { "distance": 100, "line_linked": { "opacity": 0.5 } },
+                "bubble": { "distance": 400, "size": 40, "duration": 2 },
+                "repulse": { "distance": 200, "duration": 0.4 },
+                "push": { "particles_nb": 4 }
+            }
+        },
+        "retina_detect": true
+    });
 
-              const fadeInEffect = setInterval(() => {
-                opacity += 0.05; 
-                canvas.style.opacity = opacity;
+    // 让粒子 canvas 自己淡入
+    const canvas = document.querySelector("#particle-background > canvas");
+    if (canvas) {
+        let opacity = 0;
+        canvas.style.opacity = opacity;
+        const fadeInEffect = setInterval(() => {
+            opacity += 0.05;
+            canvas.style.opacity = opacity;
+            if (opacity >= 1) {
+                clearInterval(fadeInEffect);
+            }
+        }, 100);
+    }
 
-                if (opacity >= 1) {
-                  clearInterval(fadeInEffect);
-                }
-              }, 100);
-            }, 500); 
-          };
-</script>    
+    // 文字/按钮出现动画
+    setTimeout(function() {
+        document.getElementById('subtitle').classList.add('show');
+        document.getElementById('button').classList.add('show');
+    }, 500);
+
+
+    // 控制面板逻辑
+    var tintLayer   = document.getElementById('particle-tint-layer');
+
+    var particleColorPicker = document.getElementById('particle-color-picker');
+    var particleAlphaSlider = document.getElementById('particle-alpha-slider');
+
+    function hexToRgb(hex) {
+        var r = parseInt(hex.slice(1,3), 16);
+        var g = parseInt(hex.slice(3,5), 16);
+        var b = parseInt(hex.slice(5,7), 16);
+        return {r:r,g:g,b:b};
+    }
+
+    function updateParticleTint() {
+        var rgb   = hexToRgb(particleColorPicker.value);
+        var alpha = (parseInt(particleAlphaSlider.value, 10) || 0) / 100;
+        tintLayer.style.backgroundColor =
+            'rgba(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ',' + alpha + ')';
+    }
+
+    particleColorPicker.addEventListener('input', updateParticleTint);
+    particleAlphaSlider.addEventListener('input', updateParticleTint);
+
+    // 初始化
+    updateParticleTint();
+});
+</script>
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",

@@ -318,5 +318,3 @@ let underlines = new StaggerShape({
   
 //   new MojsPlayer({ add: timeline, isRepeat:true, isPlaying:true});
   timeline.play()
-
-  
