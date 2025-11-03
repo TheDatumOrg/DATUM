@@ -152,10 +152,20 @@ http://themeforest.net/user/owwwlab/
                   <!-- 左侧控制面板 -->
                   <div class="bg-control-panel">
                     <div class="panel-block">
-                      <label>Particle tint</label>
+                      <label>Particle tint (background)</label>
                       <input id="particle-color-picker" type="color" value="#000000" />
                       <input id="particle-alpha-slider" type="range" min="0" max="100" value="100" />
                     </div>
+
+                    <div class="panel-block">
+                      <label>Particles color</label>
+                      <input id="particles-color-picker" type="color" value="#ffffff" />
+                      <input id="particles-alpha-slider" type="range" min="0" max="100" value="50" />
+                    </div>
+
+                    <div class="panel-block">
+                    <a href="ani.html">ANIMATION</a>
+                  </div>
                   </div>
 
                   <!-- 你的 lab 动画 logo -->
@@ -270,8 +280,46 @@ window.addEventListener('load', function() {
 
     // 初始化
     updateParticleTint();
+    // ==== 小工具 ====
+    function getPerceivedLuminance(hex) {
+      const r = parseInt(hex.slice(1,3),16)/255;
+      const g = parseInt(hex.slice(3,5),16)/255;
+      const b = parseInt(hex.slice(5,7),16)/255;
+      const lin = c => (c <= 0.04045) ? c/12.92 : Math.pow((c+0.055)/1.055, 2.4);
+      const R = lin(r), G = lin(g), B = lin(b);
+      return 0.2126*R + 0.7152*G + 0.0722*B;
+    }
+    function pickContrast(hex){ return getPerceivedLuminance(hex) > 0.5 ? '#111111' : '#ffffff'; }
+
+    // ==== 2) 粒子（particles.js）：color + alpha ====
+    const particlesColorPicker = document.getElementById('particles-color-picker');
+    const particlesAlphaSlider = document.getElementById('particles-alpha-slider');
+
+    function applyParticlesCA() {
+      const hex   = (particlesColorPicker && particlesColorPicker.value) || '#ffffff';
+      const alpha = (parseInt(particlesAlphaSlider && particlesAlphaSlider.value, 10) || 0) / 100;
+
+      const pjsContainer = window.pJSDom && window.pJSDom[0];
+      if (pjsContainer && pjsContainer.pJS) {
+        const p = pjsContainer.pJS;
+        p.particles.color.value = hex;
+        if (p.particles.line_linked) p.particles.line_linked.color = hex;
+
+        // 粒子与连线的不透明度
+        if (p.particles.opacity) p.particles.opacity.value = alpha;
+        if (p.particles.line_linked) p.particles.line_linked.opacity = Math.min(1, alpha + 0.2); // 连线稍更清晰，可按需调
+
+        p.fn.particlesRefresh();
+      }
+    }
+    if (particlesColorPicker) particlesColorPicker.addEventListener('input', applyParticlesCA);
+    if (particlesAlphaSlider) particlesAlphaSlider.addEventListener('input', applyParticlesCA);
+
+    // ==== 初始同步（等粒子初始化完成稍稍再执行）====
+    setTimeout(() => { applyForeground(); applyParticlesCA(); }, 300);
 });
 </script>
+
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",

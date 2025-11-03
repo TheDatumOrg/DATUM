@@ -318,3 +318,7 @@ let underlines = new StaggerShape({
   
 //   new MojsPlayer({ add: timeline, isRepeat:true, isPlaying:true});
   timeline.play()
+
+window.DATUM_CHARS = [ dCharacter, aCharacter, tCharacter, uCharacter, mCharacter ];
+window.DATUM_TIMELINE = timeline;
+

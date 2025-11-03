@@ -194,7 +194,7 @@ ul#primary-menu ul.sub-menu{
 .bg-control-panel {
     position: absolute;
     left: 20px;
-    top: 20%;
+    top: 50%;
     transform: translateY(-50%);
     z-index: 9999; /* 甚至比 z-index:3 还高，确保好点 */
     background: rgba(0,0,0,0.5);
