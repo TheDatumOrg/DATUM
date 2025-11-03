@@ -5931,6 +5931,7 @@ ul#primary-menu li.mega-menu .megamenu-wrapper:after {
 }
 /*
 	position: relative !important;*/
+@media (max-width:1200px){
 #header.mobile-menu .header-icons .ol-mobile-trigger {
     display: inline-block;
 }
@@ -6012,6 +6013,7 @@ ul#primary-menu li.mega-menu .megamenu-wrapper:after {
 }
 #header.mobile-menu #primary-menu >* {
     text-align: left;
+}
 }
 @media (min-width: 1200px) {
     body:not(.side-header) #header ul#primary-menu {
