@@ -83,12 +83,12 @@ ul#primary-menu ul.sub-menu{
     opacity: 0; 
     transform: translateY(-25px); 
     transition: opacity 1.5s ease-out, transform 1.5s ease-out; 
-    font-size: 20px; 
+    font-size: 35px; 
     letter-spacing: 3px; 
     line-height: 1; 
     color: #fff;
     position: relative; 
-    top: 60%; 
+    top: 70%; 
     text-align: center;
 }
 
@@ -100,7 +100,7 @@ ul#primary-menu ul.sub-menu{
     height: fit-content; /* Or a fixed height */
     width: fit-content;
     position: relative;
-    top: 75%;
+    top: 77%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -114,7 +114,7 @@ ul#primary-menu ul.sub-menu{
     font-weight: bold;
     padding: 12px 50px;
     background-color: transparent;
-    border: 1px solid #dedede;
+    border: 2px solid #dedede;
     color: #fff;
     border-radius: 60px;
     top: 50%;
@@ -148,114 +148,3 @@ ul#primary-menu ul.sub-menu{
     height: auto;
 }
 
-
-/* 整个 hero 背景区域（tint + 粒子） */
-#hero-stage {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1; /* 整个背景区域在最底下的层，不压文字 */
-}
-
-/* 染色层：放在背景最底层，用来调色 */
-#particle-tint-layer {
-    position: absolute;
-    inset: 0;  /* top/right/bottom/left:0 */
-    background-color: rgba(255,0,0,0); /* JS会改成 rgba(r,g,b,alpha) */
-    z-index: 1;      /* 在 hero-stage 里，它是最下面 */
-    pointer-events: none;
-}
-
-/* 粒子层：particles.js 在这里生成 canvas。
-   我们强行把 canvas 提到 z-index:2，这样它永远在 tint 上面 */
-#particle-background {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-}
-#particle-background > canvas {
-    position: absolute !important;
-    inset: 0;
-    z-index: 2 !important;  /* 粒子永远在染色层上面 */
-}
-
-/* 文字、logo、按钮、控制面板：最上层 */
-#js-logo,
-#subtitle,
-.button-container,
-.bg-control-panel {
-    position: relative;
-    z-index: 3;
-}
-
-/* 左侧控制面板，之前的样式保持，只是确保层级更高 */
-.bg-control-panel {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 9999; /* 甚至比 z-index:3 还高，确保好点 */
-    background: rgba(0,0,0,0.5);
-    padding: 12px 14px;
-    border-radius: 8px;
-    font-family: "Play", sans-serif;
-    font-size: 12px;
-    line-height: 1.4;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 160px;
-}
-
-.bg-control-panel .panel-block {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.bg-control-panel label {
-    font-size: 11px;
-    font-weight: 600;
-    color: #fff;
-    display: block;
-}
-
-.bg-control-panel input[type="range"] {
-    width: 100%;
-    cursor: pointer;
-}
-
-.bg-control-panel input[type="color"] {
-    width: 100%;
-    height: 32px;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    background: transparent;
-    appearance: none;
-}
-
-@media (max-width:768px){
-    .bg-control-panel {
-        top: 60px;
-        left: 10px;
-        transform: none;
-        width: 140px;
-        padding:10px 12px;
-        gap:10px;
-        font-size:11px;
-    }
-}
-
-/* 给JS可控的颜色目标 */
-#js-logo {
-    color: #fff;
-    fill: #fff;
-    stroke: #fff;
-}
-#subtitle {
-    color: #fff;
-}

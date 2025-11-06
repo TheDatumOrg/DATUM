@@ -86,7 +86,7 @@ http://themeforest.net/user/owwwlab/
                   </li>
                 </ul>
               </li> -->
-              <li class="menu-item-has-children"><a href="projects.html" title="Projects"><span>Projects</span></a>
+              <li class="menu-item-has-children"><a href="projects.html" title="Projects"><span>Research</span></a>
                 <ul class="sub-menu">
                   <li><a href="SIGNAL.html" title="SIGNAL Library"><span>SIGNAL Library</span></a>
                   </li>
@@ -109,7 +109,23 @@ http://themeforest.net/user/owwwlab/
                   <ul class="sub-menu">
                   <li><a href="people.html" title="People"><span>Members</span></a>
                   </li>
-                  <li><a href="blog.html" title="Blogs"><span>Blogs</span></a>
+                  <li><a href="gallery.html" title="Gallery"><span>Gallery</span></a>
+                  </li>
+                  </ul>
+                </li>
+                <li><a href="courses.html" title="Courses"><span>Courses</span></a>
+                </li>
+                <li><a href="seminar.html" title="Seminar"><span>Seminar</span></a>
+                </li>
+                <li><a href="blog.html" title="Blog"><span>Blog</span></a>
+                </li>
+                <li><a href="openings.html" title="Openings"><span>Openings</span></a>
+                </li>
+                <li class="menu-item-has-children"><a href="internal.html" title="Internal"><span>Internal</span></a>
+                  <ul class="sub-menu">
+                  <li><a href="https://app.slack.com/client/T05A97ZDC6Q" title="Slack"><span>Slack</span></a>
+                  </li>
+                  <li><a href="#" title="Wiki"><span>Wiki</span></a>
                   </li>
                   </ul>
                 </li>
@@ -121,10 +137,10 @@ http://themeforest.net/user/owwwlab/
                   </li>
                 </ul>
               </li> -->
-              <li><a href="javascript:void(0);" onclick="document.getElementById('footer').scrollIntoView({ behavior: 'smooth' });" title="Contact"><span>Contact</span></a>
+              <!-- <li><a href="javascript:void(0);" onclick="document.getElementById('footer').scrollIntoView({ behavior: 'smooth' });" title="Contact"><span>Contact</span></a>
               </li>
               <li><a href="https://www.timeseries.org" title="TimeSeries"><span>TimeSeries</span></a>
-              </li>
+              </li> -->
             </ul>
       </header>
       <!-- #####End Header-->
@@ -149,30 +165,30 @@ http://themeforest.net/user/owwwlab/
                     <div id="particle-background"></div>
                   </div>
 
-                  <!-- 左侧控制面板 -->
-                  <div class="bg-control-panel">
-                    <div class="panel-block">
-                      <label>Particle tint (background)</label>
-                      <input id="particle-color-picker" type="color" value="#000000" />
-                      <input id="particle-alpha-slider" type="range" min="0" max="100" value="100" />
-                    </div>
-
-                    <div class="panel-block">
-                      <label>Particles color</label>
-                      <input id="particles-color-picker" type="color" value="#ffffff" />
-                      <input id="particles-alpha-slider" type="range" min="0" max="100" value="50" />
-                    </div>
-
-                    <div class="panel-block">
-                    <a href="ani.html">ANIMATION</a>
-                  </div>
-                  </div>
-
                   <!-- 你的 lab 动画 logo -->
-                  <div id="js-logo" class="logo"></div>
+                  <div
+                    id="js-logo"
+                    class="tp-caption datum-logo"
+                    data-x="['center','center','center','center']"
+                    data-hoffset="['0','0','0','0']"
+                    data-y="['center','center','center','center']"
+                    data-voffset="['-100','-100','-100','-80']"
+                    data-transform_origin="center center"
+                    data-transform_idle="o:1;"
+                    data-transform_in="y:-50px;opacity:0;s:1200;e:Power3.easeInOut;"
+                    data-transform_out="y:50px;opacity:0;s:1000;e:Power3.easeInOut;"
+                    data-start="500"
+                  >
+                    <img
+                      src="assets/img/logo/logo-datum-sq.png"
+                      alt="DATUM Lab Logo"
+                      style="width:100px; height:auto; object-fit:contain;"
+                    />
+                  </div>
 
                   <h3 id="subtitle" class="animated-subtitle">
-                    the Data AnalyTics, Understanding, Mining, and Management Lab @ OSU
+                    the <b>D</b>ata <b>A</b>naly<b>T</b>ics, <b>U</b>nderstanding, <br>
+                    <b>M</b>ining, and <b>M</b>anagement Lab @ OSU
                   </h3>
 
                   <div class="button-container">
@@ -182,6 +198,8 @@ http://themeforest.net/user/owwwlab/
                       EXPLORE THE LAB
                     </a>
                   </div>
+
+                  <div data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['bottom','bottom','bottom','bottom']" data-voffset="['30','60','60','30']" data-width="25" data-height="35" data-whitespace="nowrap" data-visibility="['on','on','on','off']" data-transform_idle="o:1;" data-transform_in="y:50px;opacity:0;s:1500;e:Power3.easeInOut;" data-transform_out="y:50px;opacity:0;s:1000;s:1000;" data-start="2000" data-actions="[{&quot;event&quot;:&quot;click&quot;,&quot;action&quot;:&quot;scrollbelow&quot;,&quot;offset&quot;:&quot;0px&quot;}]" data-basealign="slide" data-responsive_offset="off" data-responsive="off" class="tp-caption rev-scroll-btn"><span></span></div>
 
                 </li>
                 <script>
@@ -329,7 +347,7 @@ window.addEventListener('load', function() {
     "logo": "https://thedatumorg.github.io/DATUM/assets/img/logo/DATUM_black.png",
     "sameAs": [
       "https://github.com/TheDatumOrg",
-      "https://twitter.com/thedatumorg",
+      "https://twitter.com/thedatumorg",assets
       "https://www.instagram.com/thedatumorg"
     ]
   }
@@ -343,7 +361,7 @@ window.addEventListener('load', function() {
             <section class="section">
               <div class="container">
                 <div class="row">
-                  <div class="col-md-12">
+                  <div class="col-md-9">
                     <div>
                       <h2>DATUM @ OSU</h2>
                       <p>Welcome to the Data AnalyTics, Understanding, Mining, and Management (DATUM) Lab at The Ohio State University, led by Professor John Paparrizos. Our research focuses on advancing the next generation of data-intensive and machine learning applications. We specialize in developing adaptive solutions for managing and analyzing structured and unstructured data, including relational data, time series, multimedia, text, graphs, web data, and IoT data. </p>
@@ -383,10 +401,140 @@ window.addEventListener('load', function() {
                       </div>
                     </div>
                   </div>
+                  <div class="col-md-3">
+                    <!-- #####Begin person card-->
+                    <div class="vc-card boxed"><a href="#"><img src="assets/img/people/jp.jpg" alt="people"></a>
+                      <div class="vc-card-wrapper"><a href="#" class="title">Prof. John Paparrizos</a>
+                        <div class="subtitle">
+                          AAA
+                          <br> BBB
+                        </div>
+                      </div>
+                      <div class="links"><a href="https://www.paparrizos.org/" data-toggle="tooltip" data-original-title="homepage"><i class="fa fa-user"></i></a><a href="https://scholar.google.com/citations?user=CmxltbUAAAAJ&hl=en&oi=ao" data-toggle="tooltip" data-original-title="Google Scholar"><i class="fa fa-google"></i></a><a href="https://www.facebook.com/thedatumorg" data-toggle="tooltip" data-original-title="Facebook"><i class="fa fa-facebook"></i></a><a href="https://x.com/thedatumorg" data-toggle="tooltip" data-original-title="X"><i class="fa fa-twitter"></i></a></div>
+                    </div>
+                    <!-- #####End person card-->
+                  </div>
                 </div>
               </div>
             </section>
-            <section id="research" class="section bg-gray">
+            <section class="section bg-gray" id="publications">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h2>News</h2>
+                    <p>Awards · Papers · Events</p><a href="publications.html" class="btn btn-anim-drawer btn-round btn-small">Read more</a>
+                  </div>
+                  <div class="col-md-8">
+                    <!-- <div class="pub-item with-icon">
+                      <div class="elem-wrapper"><i class="oli oli-bookmark"></i></div>
+                      <div class="content-wrapper">
+                        <h3 class="title">Four papers and two demos accepted at VLDB 2025!</h3>
+                        <div class="description">
+                          <div class="citation">
+                             
+                            Neural Information Processing Systems 2024
+                            <br>Liu and Paparrizos
+                          </div><a href="https://thedatumorg.github.io/TSB-AD/" class="link-with-icon"> <i class="fa fa-external-link"></i>Publisher's website</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pub-item with-icon">
+                      <div class="elem-wrapper"><i class="oli oli-bookmark"></i></div>
+                      <div class="content-wrapper">
+                        <h3 class="title">SPARTAN: Data-Adaptive Symbolic Time-Series Approximation</h3>
+                        <div class="description">
+                          <div class="citation">
+                             
+                            The 2025 ACM SIGMOD/PODS International Conference on Management of Data
+                            <br>Yang and Paparrizos
+                          </div><a href="https://dl.acm.org/doi/10.1145/3725357" class="link-with-icon"> <i class="fa fa-external-link"></i>Publisher's website</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pub-item with-icon">
+                      <div class="elem-wrapper"><i class="oli oli-bookmark"></i></div>
+                      <div class="content-wrapper">
+                        <h3 class="title">k-Shape: Efficient and Accurate Clustering of Time Series</h3>
+                        <div class="description">
+                          <div class="citation">
+                             
+                            <div class="link-with-icon" style="color: #b71c1c"> <i class="oli oli-trophy2"></i><b>"Best of SIGMOD 2015"</b></div>
+                            <br>Paparrizos and Gravano
+                          </div><a href="https://dl.acm.org/doi/10.1145/2949741.2949758" class="link-with-icon"> <i class="fa fa-external-link"></i>Publisher's website</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div> -->
+                        <div class="row">
+                          <div class="col-md-1">
+                            <p><b>2025.08</b></p>
+                          </div>
+                          <div class="col-md-11">
+                            <p>Four papers and two demos accepted at <a href="https://vldb.org/2025/" target="_blank"><b>VLDB 2025</b></a>!
+                            </p><ol><li><a href="https://www.paparrizos.org/papers/LiuVLDB25a.pdf" target="_blank">TSB-AutoAD: Towards Automated Solutions for Time-Series Anomaly Detection</a></li>
+                              <li><a href="https://www.paparrizos.org/papers/PaparrizosVLDB25.pdf" target="_blank">Time-Series Clustering: A Comprehensive Study of Data Mining and Deep Learning Methods</a></li>
+                              <li><a href="https://www.paparrizos.org/papers/HishidaVLDB25.pdf" target="_blank">Beyond Compression: A Comprehensive Evaluation of Lossless Floating-Point Compression</a></li>
+                              <li><a href="https://www.paparrizos.org/papers/GiannoulidisVLDB25.pdf" target="_blank">BURST: Rendering Clustering Techniques Suitable for Evolving Streams</a></li>
+                              <li><a href="https://www.paparrizos.org/papers/LiuVLDB25b.pdf" target="_blank">EasyAD: A Demonstration of Automated Solutions for Time-Series Anomaly Detection</a></li>
+                              <li><a href="https://www.paparrizos.org/papers/YangVLDB25.pdf" target="_blank">SAIL: A Voyage to Symbolic Approximation Solutions for Time-Series Analysis</a></li>
+                            </ol>
+                            <p></p>
+                          </div>
+                        </div>
+                        <div class="sp-blank-10"></div>
+                        <div class="row">
+                          <div class="col-md-1">
+                            <p><b>2025.07</b></p>
+                          </div>
+                          <div class="col-md-11">
+                            <p>Two tutorials accepted at <a href="https://kdd2025.kdd.org/" target="_blank"><b>ACM SIGKDD 2025</b></a> and <a href="https://2025.ijcai.org/" target="_blank"><b>IJCAI 2025</b></a>!
+                            </p><ol><li><a href="https://www.paparrizos.org/papers/PaparrizosSIGKDD25.pdf" target="_blank">Advances in Time-Series Anomaly Detection: Algorithms, Benchmarks, and Evaluation Measures</a></li>
+                            </ol>                            
+                            <p></p>
+                          </div>
+                        </div>     
+                        <div class="sp-blank-10"></div>
+                        <div class="row">
+                          <div class="col-md-1">
+                            <p><b>2025.06</b></p>
+                          </div>
+                          <div class="col-md-11">
+                            <p>Humbled and honored to receive the <a href="https://sigmod.org/sigmod-2025-test-of-time-award/" target="_blank"><b>2025 ACM SIGMOD Test-of-Time Award</b></a> for <a href="https://www.paparrizos.org/papers/PaparrizosSIGMOD15.pdf" target="_blank"><b>k-Shape</b></a>!
+                            </p>
+                          </div>
+                        </div>
+                        <div class="sp-blank-10"></div>
+                        <div class="row">
+                          <div class="col-md-1">
+                            <p><b>2025.05</b></p>
+                          </div>
+                          <div class="col-md-11">
+                            <p>Three papers and a demo accepted at <a href="https://2025.sigmod.org/" target="_blank"><b>ACM SIGMOD 2025</b></a>:
+                            </p><ol><li><a href="https://www.paparrizos.org/papers/YangSIGMOD25.pdf" target="_blank">SPARTAN: Data-Adaptive Symbolic Time-Series Approximation</a></li>
+                              <li><a href="https://www.paparrizos.org/papers/GupteSIGMOD25a.pdf" target="_blank">Understanding the Black Box: A Deep Empirical Dive into Shapley Value Approximations</a></li>
+                              <li><a href="https://www.paparrizos.org/papers/DhondtSIGMOD25.pdf" target="_blank">A Structured Study of Multivariate Time-Series Distance Measures</a></li>
+                              <li><a href="https://www.paparrizos.org/papers/GupteSIGMOD25b.pdf" target="_blank">ShapX Engine: A Demonstration of Shapley Value Approximations</a></li>
+                            </ol>
+                            <p></p>
+                          </div>
+                        </div>
+                        <div class="sp-blank-10"></div>
+                        <div class="row">
+                          <div class="col-md-1">
+                            <p><b>2024.10</b></p>
+                          </div>
+                          <div class="col-md-11">
+                            <p>One paper accepted at <a href="https://neurips.cc/Conferences/2024" target="_blank"><b>NeurIPS 2024</b></a>:
+                              </p><ol>
+                              <li><a href="https://www.paparrizos.org/papers/LiuNeurIPS24.pdf" target="_blank">The Elephant in the Room: Towards A Reliable Time-Series Anomaly Detection Benchmark</a></li>
+                              </ol>
+                            <p></p>
+                          </div>
+                        </div> 
+                </div>
+              </div>
+            </section>
+            <section id="research" class="section bg-pattern">
               <div class="container">
                 <!-- #####Begin heading-->
                 <div class="heading-with-sub text-center">
@@ -395,10 +543,21 @@ window.addEventListener('load', function() {
                 </div>
                 <!-- #####End heading-->
                 <div class="sp-blank-30"></div>
+                <!-- <div class="col-md-12"> -->
+                <!-- <a href="javascript:void(0)" class="ol-iconic-link m-bottom-10 dropdown-toggle">
+                    <i class="oli oli-linegraph"></i> Annual Report 2015
+                  </a>
+
+                  <div class="dropdown-content">
+                    <a href="#">Overview</a>
+                    <a href="#">Financial Highlights</a>
+                    <a href="#">Download PDF</a>
+                  </div> -->
                 <!-- #####Begin carousel-->
                 <div data-margin="30" data-nav="true" data-loop="true" class="owl-carousel items owwwlab-theme nav-top-center">
                   <!-- #####Begin journal element--><a href="news-single.html" class="journal-el set-bg skin-green"><img src="assets/img/publications/grid/07.png" class="set-me">
                     <div class="contents">
+                      <div class="sp-line-150"></div>
                       <div class="header">
                         <h6>2025/10</h6>
                       </div>
@@ -407,6 +566,19 @@ window.addEventListener('load', function() {
                           News
                         </h6>
                         <h2 class="title">Our Comprehensive Website for TimeSeries: timeseries.org is coming soon</h2>
+                      </div>
+                    </div></a>
+                  <a href="news-single.html" class="journal-el set-bg skin-yellow"><img src="assets/img/publications/grid/03.jpg" class="set-me">
+                    <div class="contents">
+                      <div class="header">
+                        <h6>5 Sep 2015</h6>
+                      </div>
+                      <div class="footer">
+                        <h6 class="sub-title">
+                          By John Doe</br>
+                          In Students News
+                        </h6>
+                        <h2 class="title">Postgraduate mixer at the Chelsea MA show</h2>
                       </div>
                     </div></a>
                   <!-- #####End journal element-->
@@ -495,57 +667,6 @@ window.addEventListener('load', function() {
                   <div class="col-md-4">
                     <h5 class="with-shaded-label"><span class="shaded-label darken">14</span><span>Awesome People</span></h5>
                     <p>A growing team of passionate researchers.</p><a href="people.html" class="btn btn-small btn-circle">read more</a>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section class="section bg-pattern" id="publications">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-4">
-                    <h2>Selected<br>Publications</h2>
-                    <p>We have selected a collection of key publications that highlight our recent research contributions.</p><a href="publications.html" class="btn btn-anim-drawer btn-round btn-small">Read more</a>
-                  </div>
-                  <div class="col-md-8">
-                    <div class="pub-item with-icon">
-                      <div class="elem-wrapper"><i class="oli oli-bookmark"></i></div>
-                      <div class="content-wrapper">
-                        <h3 class="title">The Elephant in the Room: Towards A Reliable Time-Series Anomaly Detection Benchmark</h3>
-                        <div class="description">
-                          <div class="citation">
-                             
-                            Neural Information Processing Systems 2024
-                            <br>Liu and Paparrizos
-                          </div><a href="https://thedatumorg.github.io/TSB-AD/" class="link-with-icon"> <i class="fa fa-external-link"></i>Publisher's website</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="pub-item with-icon">
-                      <div class="elem-wrapper"><i class="oli oli-bookmark"></i></div>
-                      <div class="content-wrapper">
-                        <h3 class="title">SPARTAN: Data-Adaptive Symbolic Time-Series Approximation</h3>
-                        <div class="description">
-                          <div class="citation">
-                             
-                            The 2025 ACM SIGMOD/PODS International Conference on Management of Data
-                            <br>Yang and Paparrizos
-                          </div><a href="https://dl.acm.org/doi/10.1145/3725357" class="link-with-icon"> <i class="fa fa-external-link"></i>Publisher's website</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="pub-item with-icon">
-                      <div class="elem-wrapper"><i class="oli oli-bookmark"></i></div>
-                      <div class="content-wrapper">
-                        <h3 class="title">k-Shape: Efficient and Accurate Clustering of Time Series</h3>
-                        <div class="description">
-                          <div class="citation">
-                             
-                            <div class="link-with-icon" style="color: #b71c1c"> <i class="oli oli-trophy2"></i><b>"Best of SIGMOD 2015"</b></div>
-                            <br>Paparrizos and Gravano
-                          </div><a href="https://dl.acm.org/doi/10.1145/2949741.2949758" class="link-with-icon"> <i class="fa fa-external-link"></i>Publisher's website</a>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -652,6 +773,11 @@ window.addEventListener('load', function() {
     <script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.migration.min.js"></script>
     <script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
     <script type="text/javascript">
+      $('.journal-el').on('click', function (e) {
+        e.preventDefault();
+        $('.journal-el').removeClass('expanded'); // 关闭其他项
+        $(this).addClass('expanded');
+      });
       jQuery("#rev_slider_24_1").show().revolution({
       	sliderType:"standard",
       	sliderLayout:"fullscreen",
@@ -702,7 +828,7 @@ window.addEventListener('load', function() {
       })
     </script>
     <script src="assets/js/custom.js"></script>
-    <script src="assets/js/datum_logo.js"></script>
+    <!-- <script src="assets/js/datum_logo.js"></script> -->
     <script src="http://localhost:35729/livereload.js"></script>
     <!-- #####End scripts-->
   </body>

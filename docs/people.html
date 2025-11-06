@@ -50,90 +50,119 @@ http://themeforest.net/user/owwwlab/
     <title>DATUM LAB</title>
   </head>
   <!-- #####End head-->
-  <body class="fullwidth sticky-header">
-    <div id="wrapper" class="regular-layout">
+  <body class="sticky-header bg-pattern">
+    <div id="wrapper" class="boxed-layout">
     <!-- <div id="wrapper" class="boxed-layout"> -->
       <!-- #####Begin Header-->
-      <header id="header" class=" dark trans">
-        <div class="head-main">
-          <div class="container">
-            <!-- logo-->
-            <!-- #####Begin logo wrapper-->
-            <div class="logo-wrapper">
-              <!-- standard Logo--><a href="index.html"><img src="assets/img/logo/logo-datum.png" alt="CHAOS HTML Template" class="logo-light ol-retina"><img src="assets/img/logo/logo-datum.png" alt="CHAOS HTML Template" class="logo-dark ol-retina"></a>
-            </div>
-            <!-- #####End logo wrapper-->
-            <!-- primary navigation-->
-            <ul id="primary-menu">
-              <li><a href="index.html" title="Home"><span>Home</span></a>
-              </li>
-              <!-- <li class="menu-item-has-children"><a href="about.html" title="About"><span>About</span></a>
-                <ul class="sub-menu">
-                  <li><a href="about.html" title="About us"><span>About us</span></a>
-                  </li>
-                  <li><a href="about-history.html" title="Our History"><span>Our History</span></a>
-                  </li>
-                  <li><a href="about-people.html" title="People Directory"><span>People Directory</span></a>
-                  </li>
-                </ul>
-              </li> -->
-              <!-- <li class="menu-item-has-children"><a href="publications.html" title="Publications"><span>Publications</span></a>
-                <ul class="sub-menu">
-                  <li><a href="publications.html" title="Publications list"><span>Publications list</span></a>
-                  </li>
-                  <li><a href="pub-periodicals.html" title="Periodicals"><span>Periodicals</span></a>
-                  </li>
-                  <li><a href="pub-papers.html" title="Peer reviewed articles"><span>Peer reviewed articles</span></a>
-                  </li>
-                </ul>
-              </li> -->
-              <li class="menu-item-has-children"><a href="projects.html" title="Projects"><span>Projects</span></a>
-                <ul class="sub-menu">
-                  <li><a href="SIGNAL.html" title="SIGNAL Library"><span>SIGNAL Library</span></a>
-                  </li>
-                  <li><a href="Chameleon.html" title="Chameleon"><span>Chameleon</span></a>
-                  </li>
-                  <li><a href="" title="More"><span>more to come...</span></a>
-                  </li></li></ul>
-              <li class="menu-item-has-children"><a href="publications.html" title="Publications"><span>Publications</span></a>
-                <ul class="sub-menu">
-                  <li><a href="publications.html" title="Regular Publications"><span>Regular Publications</span></a>
-                  </li>
-                  <li><a href="Tutorials.html" title="Tutorials"><span>Tutorials</span></a>
-                  </li>
-                  <li><a href="short-papers.html" title="Short Papers"><span>Short Papers</span></a>
-                  </li>
-                  <li><a href="Workshops.html" title="Workshops"><span>Workshops</span></a>
-                  </li></li>
-                </ul>
-                <li class="menu-item-has-children"><a href="people.html" title="People"><span>People</span></a>
-                  <ul class="sub-menu">
-                  <li><a href="people.html" title="People"><span>Members</span></a>
-                  </li>
-                  <li><a href="blog.html" title="Blogs"><span>Blogs</span></a>
-                  </li>
-                  </ul>
-                </li>
-              <!-- <li class="menu-item-has-children to-left"><a href="events.html" title="Events"><span>Events</span></a>
-                <ul class="sub-menu">
-                  <li><a href="events.html" title="Events"><span>Events</span></a>
-                  </li>
-                  <li><a href="events-single.html" title="Single Event"><span>Single Event</span></a>
-                  </li>
-                </ul>
-              </li> -->
-              <li><a href="javascript:void(0);" onclick="document.getElementById('footer').scrollIntoView({ behavior: 'smooth' });" title="Contact"><span>Contact</span></a>
-              </li>
-              <li><a href="https://www.timeseries.org" title="TimeSeries"><span>TimeSeries</span></a>
-              </li>
+<header id="header" class="dark header-thin mobile-menu">
+  <!-- ===== Top bar (head-main) ===== -->
+  <div class="head-main hidden-sticky">
+    <div class="container">
+      <!-- Logo (top bar) -->
+      <div class="logo-wrapper">
+        <a href="index.html">
+          <img src="assets/img/logo/logo-datum.png" alt="DATUM" class="logo-light ol-retina" style="display:none;">
+          <img src="assets/img/logo/logo-datum.png" alt="DATUM" class="logo-dark ol-retina" style="display:inline-block;">
+        </a>
+      </div>
+
+      <!-- Optional: tagline / socials -->
+      <div class="promotion">
+        <!-- <span>The DATUM Lab</span> -->
+        <ul class="social-icons">
+                <li><a href="https://www.facebook.com/thedatumorg" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-animation="fadeInUp" data-original-title="Facebook"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="https://twitter.com/thedatumorg" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-animation="fadeInUp" data-original-title="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.instagram.com/thedatumorg" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-animation="fadeInUp" data-original-title="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="https://github.com/johnpaparrizos" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-animation="fadeInUp" data-original-title="Github"><i class="fa-brands fa-github" aria-hidden="true"></i></a></li>
+          <!-- add more socials if you like -->
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Nav row (sticks) ===== -->
+  <div class="nav-row">
+    <div class="container">
+      <div class="visible-sticky">
+
+        <div class="logo-wrapper">
+          <a href="index.html">
+            <img src="assets/img/logo/logo-datum.png" alt="DATUM" class="logo-light ol-retina" style="display:none;">
+            <img src="assets/img/logo/logo-datum.png" alt="DATUM" class="logo-dark ol-retina" style="display:inline-block;">
+          </a>
+        </div>
+      </div> 
+
+      <!-- Primary navigation -->
+      <ul id="primary-menu">
+        <li><a href="index.html" title="Home"><span>Home</span></a></li>
+
+        <li class="menu-item-has-children">
+          <a href="projects.html" title="Projects"><span>Projects</span></a>
+          <ul class="sub-menu">
+            <li><a href="SIGNAL.html" title="SIGNAL Library"><span>SIGNAL Library</span></a></li>
+            <li><a href="Chameleon.html" title="Chameleon"><span>Chameleon</span></a></li>
+            <li><a href="#" title="More"><span>more to come...</span></a></li>
+          </ul>
+        </li>
+
+        <li class="menu-item-has-children">
+          <a href="publications.html" title="Publications"><span>Publications</span></a>
+          <ul class="sub-menu">
+            <li><a href="publications.html" title="Regular Publications"><span>Regular Publications</span></a></li>
+            <li><a href="Tutorials.html" title="Tutorials"><span>Tutorials</span></a></li>
+            <li><a href="short-papers.html" title="Short Papers"><span>Short Papers</span></a></li>
+            <li><a href="Workshops.html" title="Workshops"><span>Workshops</span></a></li>
+          </ul>
+        </li>
+
+        <li class="menu-item-has-children">
+          <a href="people.html" title="People"><span>People</span></a>
+          <ul class="sub-menu">
+            <li><a href="people.html" title="Members"><span>Members</span></a></li>
+            <li><a href="gallery.html" title="Gallery"><span>Gallery</span></a></li>
+          </ul>
+        </li>
+        <li><a href="courses.html" title="Courses"><span>Courses</span></a>
+          </li>
+          <li><a href="seminar.html" title="Seminar"><span>Seminar</span></a>
+          </li>
+          <li><a href="blog.html" title="Blog"><span>Blog</span></a>
+          </li>
+          <li><a href="openings.html" title="Openings"><span>Openings</span></a>
+          </li>
+          <li class="menu-item-has-children"><a href="internal.html" title="Internal"><span>Internal</span></a>
+            <ul class="sub-menu">
+            <li><a href="https://app.slack.com/client/T05A97ZDC6Q" title="Slack"><span>Slack</span></a>
+            </li>
+            <li><a href="#" title="Wiki"><span>Wiki</span></a>
+            </li>
             </ul>
-      </header>
+          </li>
+
+        <!-- <li>
+          <a href="javascript:void(0);" onclick="document.getElementById('footer').scrollIntoView({ behavior: 'smooth' });" title="Contact"><span>Contact</span></a>
+        </li> -->
+
+        <!-- <li><a href="https://www.timeseries.org" title="TimeSeries"><span>TimeSeries</span></a></li> -->
+      </ul>
+
+      <!-- Icons beside menu (mobile trigger) -->
+      <div class="header-icons">
+        <div class="ol-mobile-trigger hamburger hamburger--elastic">
+          <div class="hamburger-box"><div class="hamburger-inner"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
       <!-- #####End Header-->
       <!-- #####Begin contents-->
       <section id="contents">
         <!-- #####Begin page head-->
-        <div id="fake-page-head"></div>
-        <div class="page-head hvh-10 lined ol-particles" data-img-src="assets/img/backgrounds/06.jpg">
+        <!-- <div id="fake-page-head"></div> -->
+        <div class="page-head hvh-10 lined shadow-line ol-particles" data-img-src="assets/img/backgrounds/06.jpg">
           <div class="container">
             <div class="tb-vcenter-wrapper">
               <div class="title-wrapper vcenter">
@@ -155,11 +184,15 @@ http://themeforest.net/user/owwwlab/
         <section class="page-contents">
           <!-- #####Begin main area-->
           <section id="main-area">
-            <section id="people" class="section" style="padding: 30px 0 10px 0;">
+            <section id="people" class="section" style="padding: 90px 0 10px 0;">
               <div class="container">
-                <h1 style="text-align: center;">Faculty</h1>
+                <!-- <h1 style="text-align: center;">Faculty</h1> -->
                 <!-- #####Begin row with multiple columns-->
                 <div class="row multi-columns-row col-margin-bottom-40">
+                  <div class="col-md-4 col-sm-6">
+                    <h3>PI</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  </div>
                   <div class="col-md-4 col-sm-6">
                     <!-- #####Begin person card-->
                     <div class="vc-card boxed hoverable-links mini-card"><a href="#" class="set-bg"> <img src="assets/img/people/jp.jpg" alt="people" class="set-me"></a>
@@ -174,10 +207,15 @@ http://themeforest.net/user/owwwlab/
                   </div>
                 </div>
                 </section>
-                <section id="people" class="section" style="padding: 30px 0 10px 0;">
+                <section id="people" class="section" style="padding: 0px 0 10px 0;">
                   <div class="container">
-                    <h1 style="text-align: center;">PhD Students</h1>
+                    <!-- <h1 style="text-align: center;">PhD Students</h1> -->
+                    <div class="sp-line-150"></div>
                     <div class="row multi-columns-row col-margin-bottom-40">
+                  <div class="col-md-4 col-sm-6">
+                    <h3>PhD Students</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  </div>
                   <div class="col-md-4 col-sm-6">
                     <!-- #####Begin person card-->
                     <div class="vc-card boxed hoverable-links mini-card"><a href="#" class="set-bg"> <img src="assets/img/people/Qinghua.jpg" alt="people" class="set-me"></a>
@@ -247,24 +285,20 @@ http://themeforest.net/user/owwwlab/
                 </div>
               </div>
               </section>
-              <section id="people" class="section" style="padding: 30px 0 10px 0;">
+              <!-- <section id="people" class="section" style="padding: 30px 0 10px 0;">
                 <div class="container">
                   <h1 style="text-align: center;">Master Students</h1>
                   <div class="row multi-columns-row col-margin-bottom-40">
                     <div class="col-md-4 col-sm-6">
-                      <!-- #####Begin person card-->
                       <div class="vc-card boxed hoverable-links mini-card"><a href="#" class="set-bg"> <img src="assets/img/people/Vaishnavi.jpg" alt="people" class="set-me"></a>
                         <div class="vc-card-wrapper"><a href="#" class="title">Vaishnavi Vishwanath Nayak</a>
                           <div class="subtitle"></div>
                         </div>
                         <div class="links"><a href="mailto:Nayak.109@osu.edu"><i class="oli oli-profile-female"></i><span>Contact</span></a><a href="#"><i class=""></i><span></span></a>
-                          <!-- <a href="#"><i class="oli oli-twitter"></i><span>Twitter</span></a> -->
                         </div>
                       </div>
-                      <!-- #####End person card-->
                     </div>
                     <div class="col-md-4 col-sm-6">
-                      <!-- #####Begin person card-->
                       <div class="vc-card boxed hoverable-links mini-card"><a href="#" class="set-bg"> <img src="assets/img/people/Varun.png" alt="people" class="set-me"></a>
                         <div class="vc-card-wrapper"><a href="#" class="title">Varun Kumar Mangla</a>
                           <div class="subtitle"></div>
@@ -272,15 +306,19 @@ http://themeforest.net/user/owwwlab/
                         <div class="links"><a href="https://github.com/va-ma-123/"><i class="fa-brands fa-github"></i><span>Github</span></a><a href="mailto:mangla.8@osu.edu"><i class="oli oli-profile-male"></i><span>Contact</span></a>
                         </div>
                       </div>
-                      <!-- #####End person card-->
                     </div>
                 </div>
               </div>
-              </section>
-              <section id="people" class="section" style="padding: 30px 0 10px 0;">
+              </section> -->
+              <section id="people" class="section" style="padding: 0px 0 10px 0;">
                 <div class="container">
-                  <h1 style="text-align: center;">Undergraduate Students</h1>
+                <div class="sp-line-150"></div>
+                  <!-- <h1 style="text-align: center;">Undergraduate Students</h1> -->
                   <div class="row multi-columns-row col-margin-bottom-40">
+                  <div class="col-md-4 col-sm-6">
+                    <h3>Undergraduate Students</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  </div>
                     <div class="col-md-4 col-sm-6">
                       <!-- #####Begin person card-->
                       <div class="vc-card boxed hoverable-links mini-card"><a href="#" class="set-bg"> <img src="assets/img/people/Yusen.png" alt="people" class="set-me"></a>
@@ -292,57 +330,14 @@ http://themeforest.net/user/owwwlab/
                       </div>
                       <!-- #####End person card-->
                     </div>
-                    <div class="col-md-4 col-sm-6">
-                      <!-- #####Begin person card-->
-                      <div class="vc-card boxed hoverable-links mini-card"><a href="#" class="set-bg"> <img src="assets/img/people/Frank.jpg" alt="people" class="set-me"></a>
-                        <div class="vc-card-wrapper"><a href="#" class="title">Frank Li</a>
-                          <div class="subtitle"></div>
-                        </div>
-                        <div class="links"><a href="https://github.com/lifrank1"><i class="fa-brands fa-github"></i><span>Github</span></a><a href="lifrank.me"><i class="oli oli-home"></i><span>Website</span></a>
-                        </div>
-                      </div>
-                      <!-- #####End person card-->
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                      <!-- #####Begin person card-->
-                      <div class="vc-card boxed hoverable-links mini-card"><a href="#" class="set-bg"> <img src="assets/img/people/Mark.jpg" alt="people" class="set-me"></a>
-                        <div class="vc-card-wrapper"><a href="#" class="title">Mark Kikta</a>
-                          <div class="subtitle"></div>
-                        </div>
-                        <div class="links"><a href="https://www.linkedin.com/in/mark-kikta/"><i class="fa-brands fa-linkedin"></i><span>Linkedin</span></a><a href="https://github.com/mkikta"><i class="fa-brands fa-github"></i><span>Github</span></a>
-                        </div>
-                      </div>
-                      <!-- #####End person card-->
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                      <!-- #####Begin person card-->
-                      <div class="vc-card boxed hoverable-links mini-card"><a href="#" class="set-bg"> <img src="assets/img/people/Qiao.png" alt="people" class="set-me"></a>
-                        <div class="vc-card-wrapper"><a href="#" class="title">Qiao Xiao</a>
-                          <div class="subtitle"></div>
-                        </div>
-                        <div class="links"><a href="https://github.com/wocqcm2"><i class="fa-brands fa-github"></i><span>Github</span></a><a href="Xiao.956@osu.edu"><i class="oli oli-profile-male"></i><span>Contact</span></a>
-                        </div>
-                      </div>
-                      <!-- #####End person card-->
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                      <!-- #####Begin person card-->
-                      <div class="vc-card boxed hoverable-links mini-card"><a href="#" class="set-bg"> <img src="assets/img/people/Tomasz.jpg" alt="people" class="set-me"></a>
-                        <div class="vc-card-wrapper"><a href="#" class="title">Tomasz Frelek</a>
-                          <div class="subtitle"></div>
-                        </div>
-                        <div class="links"><a href="https://github.com/tomaszfrelek2"><i class="fa-brands fa-github"></i><span>Github</span></a><a href="mailto:Frelek.1@osu.edu"><i class="oli oli-profile-male"></i><span>Contact</span></a>
-                        </div>
-                      </div>
-                      <!-- #####End person card-->
-                    </div>
                 </div>
               </div>
                 
                 <!-- #####End row with multiple columns-->
             </section>
-            <section id="people" class="section" style="padding: 45px 0 10px 0;">
+            <section id="people" class="section" style="padding: 0px 0 10px 0;">
               <div class="container">
+              <div class="sp-line-150"></div>
                 <h1 style="text-align: center;">Alumni</h1>
                 <div class="row multi-columns-row col-margin-bottom-40">
                 <!-- <div class="table-responsive"> -->
@@ -350,7 +345,7 @@ http://themeforest.net/user/owwwlab/
                     <thead>
                       <tr>
                         <th>Name</th>
-                        <th>Degree</th>
+                        <th>Former Position</th>
                         <th>Current Position</th>
                         <th>Company/Institution</th>
                       </tr>
@@ -358,59 +353,31 @@ http://themeforest.net/user/owwwlab/
                     <tbody>
                       <tr>
                         <td> <a href="#" class="name-avatar">
-                            <div class="avatar avatar-xs"><img src="assets/img/people/User.jpg" alt="Owl Image"></div><span class="name">Abdulla, Tariq</span></a></td>
-                        <td>research fellow</td>
-                        <td class="bold"><a href="mailto:info@owwwlab.com">johndoe@hotmail.com</a></td>
-                        <td>+44 55 66 43</td>
+                            <div class="avatar avatar-xs"><img src="assets/img/people/User.jpg" alt="Owl Image"></div><span class="name">Qiao Xiao</span></a></td>
+                        <td>Undergraduate Research Assistant</td>
+                        <td class="bold"><a href="mailto:info@owwwlab.com">Computer Science</a></td>
+                        <td>Cornell University</td>
                       </tr>
                       <tr>
                         <td> <a href="#" class="name-avatar">
-                            <div class="avatar avatar-xs"><img src="assets/img/people/User.jpg" alt="Owl Image"></div><span class="name">Ahmad, Irqufen</span></a></td>
-                        <td>research fellow</td>
-                        <td class="bold"><a href="mailto:info@owwwlab.com">johndoe@hotmail.com</a></td>
-                        <td>+44 55 66 43</td>
+                            <div class="avatar avatar-xs"><img src="assets/img/people/User.jpg" alt="Owl Image"></div><span class="name">Frank Li</span></a></td>
+                        <td>Undergraduate Research Assistant</td>
+                        <td class="bold"><a href="mailto:info@owwwlab.com">Software Engineer</a></td>
+                        <td>Meta</td>
                       </tr>
                       <tr>
                         <td> <a href="#" class="name-avatar">
-                            <div class="avatar avatar-xs"><img src="assets/img/people/User.jpg" alt="Owl Image"></div><span class="name">Abdulla, Ahmad</span></a></td>
-                        <td>research fellow</td>
-                        <td class="bold"><a href="mailto:info@owwwlab.com">johndoe@hotmail.com</a></td>
-                        <td>+44 55 66 43</td>
+                            <div class="avatar avatar-xs"><img src="assets/img/people/User.jpg" alt="Owl Image"></div><span class="name">Mark Kikta</span></a></td>
+                        <td>Undergraduate Research Assistant</td>
+                        <td class="bold"><a href="mailto:info@owwwlab.com">AI/ML</a></td>
+                        <td>Equity</td>
                       </tr>
                       <tr>
                         <td> <a href="#" class="name-avatar">
-                            <div class="avatar avatar-xs"><img src="assets/img/people/User.jpg" alt="Owl Image"></div><span class="name">Rodriguez, Manuel</span></a></td>
-                        <td>research fellow</td>
-                        <td class="bold"><a href="mailto:info@owwwlab.com">johndoe@hotmail.com</a></td>
-                        <td>+44 55 66 43</td>
-                      </tr>
-                      <tr>
-                        <td> <a href="#" class="name-avatar">
-                            <div class="avatar avatar-xs"><img src="assets/img/people/User.jpg" alt="Owl Image"></div><span class="name">Abdulla, Tariq</span></a></td>
-                        <td>research fellow</td>
-                        <td class="bold"><a href="mailto:info@owwwlab.com">johndoe@hotmail.com</a></td>
-                        <td>+44 55 66 43</td>
-                      </tr>
-                      <tr>
-                        <td> <a href="#" class="name-avatar">
-                            <div class="avatar avatar-xs"><img src="assets/img/people/User.jpg" alt="Owl Image"></div><span class="name">Ahmad, Irqufen</span></a></td>
-                        <td>research fellow</td>
-                        <td class="bold"><a href="mailto:info@owwwlab.com">johndoe@hotmail.com</a></td>
-                        <td>+44 55 66 43</td>
-                      </tr>
-                      <tr>
-                        <td> <a href="#" class="name-avatar">
-                            <div class="avatar avatar-xs"><img src="assets/img/people/User.jpg" alt="Owl Image"></div><span class="name">Abdulla, Ahmad</span></a></td>
-                        <td>research fellow</td>
-                        <td class="bold"><a href="mailto:info@owwwlab.com">johndoe@hotmail.com</a></td>
-                        <td>+44 55 66 43</td>
-                      </tr>
-                      <tr>
-                        <td> <a href="#" class="name-avatar">
-                            <div class="avatar avatar-xs"><img src="assets/img/people/User.jpg" alt="Owl Image"></div><span class="name">Rodriguez, Manuel</span></a></td>
-                        <td>research fellow</td>
-                        <td class="bold"><a href="mailto:info@owwwlab.com">johndoe@hotmail.com</a></td>
-                        <td>+44 55 66 43</td>
+                            <div class="avatar avatar-xs"><img src="assets/img/people/User.jpg" alt="Owl Image"></div><span class="name">Tomasz Frelek</span></a></td>
+                        <td>Undergraduate Research Assistant</td>
+                        <td class="bold"><a href="mailto:info@owwwlab.com">Computer Science and Engineering</a></td>
+                        <td>University of California, San Diego</td>
                       </tr>
                     </tbody>
                   </table>
