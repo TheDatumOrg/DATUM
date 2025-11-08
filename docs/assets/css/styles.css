@@ -14521,7 +14521,7 @@ iframe {
 }
 
 #particle-background {
-    background-color: #222; 
+    background-color: #333; 
     width: 100%;
     height: 100%;
     position: absolute;
@@ -14532,7 +14532,7 @@ iframe {
 
 #fake-page-head {
     height: 100px;  
-    background-color: #222; 
+    background-color: #333; 
     position: relative; 
     z-index: -1; 
 }

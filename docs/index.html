@@ -31,6 +31,7 @@ http://themeforest.net/user/owwwlab/
     <link href="assets/revolution/css/revolution-all.css" rel="stylesheet" type="text/css">
     <!-- Overwrite vendors-->
     <link href="assets/css/vendors/vendors-overwrites.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/641065b66f.js" crossorigin="anonymous"></script>
     <link href="assets/css/styles.css" rel="stylesheet" type="text/css">
     <link href="assets/css/demo4.css" rel="stylesheet" type="text/css">
     <!-- #####End styles-->
@@ -53,14 +54,44 @@ http://themeforest.net/user/owwwlab/
     <div id="wrapper" class="regular-layout">
     <!-- <div id="wrapper" class="boxed-layout"> -->
       <!-- #####Begin Header-->
-      <header id="header" class=" dark trans">
-        <div class="head-main">
-          <div class="container">
-            <!-- logo-->
-            <!-- #####Begin logo wrapper-->
-            <div class="logo-wrapper">
-              <!-- standard Logo--><a href="index.html"><img src="assets/img/logo/logo-datum.png" alt="CHAOS HTML Template" class="logo-light ol-retina"><img src="assets/img/logo/logo-datum.png" alt="CHAOS HTML Template" class="logo-dark ol-retina"></a>
-            </div>
+<header id="header" class="dark header-thin mobile-menu">
+  <!-- ===== Top bar (head-main) ===== -->
+  <div class="head-main hidden-sticky">
+    <div class="container">
+      <!-- Logo (top bar) -->
+      <div class="logo-wrapper">
+        <a href="index.html">
+          <img src="assets/img/logo/logo-datum.png" alt="DATUM" class="logo-light ol-retina" style="display:none;">
+          <img src="assets/img/logo/logo-datum.png" alt="DATUM" class="logo-dark ol-retina" style="display:inline-block;">
+        </a>
+      </div>
+
+      <!-- Optional: tagline / socials -->
+      <div class="promotion">
+        <!-- <span>The DATUM Lab</span> -->
+        <ul class="social-icons">
+                <li><a href="https://www.facebook.com/thedatumorg" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-animation="fadeInUp" data-original-title="Facebook"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="https://twitter.com/thedatumorg" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-animation="fadeInUp" data-original-title="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.instagram.com/thedatumorg" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-animation="fadeInUp" data-original-title="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="https://github.com/johnpaparrizos" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-animation="fadeInUp" data-original-title="Github"><i class="fa-brands fa-github" aria-hidden="true"></i></a></li>
+          <!-- add more socials if you like -->
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Nav row (sticks) ===== -->
+  <div class="nav-row">
+    <div class="container">
+      <div class="visible-sticky">
+
+        <div class="logo-wrapper">
+          <a href="index.html">
+            <img src="assets/img/logo/logo-datum.png" alt="DATUM" class="logo-light ol-retina" style="display:none;">
+            <img src="assets/img/logo/logo-datum.png" alt="DATUM" class="logo-dark ol-retina" style="display:inline-block;">
+          </a>
+        </div>
+      </div> 
             <!-- #####End logo wrapper-->
             <!-- primary navigation-->
             <ul id="primary-menu">
@@ -125,7 +156,7 @@ http://themeforest.net/user/owwwlab/
                   <ul class="sub-menu">
                   <li><a href="https://app.slack.com/client/T05A97ZDC6Q" title="Slack"><span>Slack</span></a>
                   </li>
-                  <li><a href="#" title="Wiki"><span>Wiki</span></a>
+                  <li><a href="https://www.notion.so/8265f8c5c8b2461f81705623a6e8be1e" title="Wiki"><span>Wiki</span></a>
                   </li>
                   </ul>
                 </li>
@@ -529,15 +560,15 @@ window.addEventListener('load', function() {
                 </div>
               </div>
             </section>
-            <section id="research" class="section bg-pattern">
-              <div class="container">
+            <!-- <section id="research" class="section bg-pattern"> -->
+              <!-- <div class="container"> -->
                 <!-- #####Begin heading-->
-                <div class="heading-with-sub text-center">
-                  <h2 class="title">Research</h2>
-                  <h4 class="subtitle">We publish news about latest changes, announcements and recent projects</h4>
-                </div>
+                <!-- <div class="heading-with-sub text-center"> -->
+                  <!-- <h2 class="title">Research</h2> -->
+                  <!-- <h4 class="subtitle">We publish news about latest changes, announcements and recent projects</h4> -->
+                <!-- </div> -->
                 <!-- #####End heading-->
-                <div class="sp-blank-30"></div>
+                <!-- <div class="sp-blank-30"></div> -->
                 <!-- <div class="col-md-12"> -->
                 <!-- <a href="javascript:void(0)" class="ol-iconic-link m-bottom-10 dropdown-toggle">
                     <i class="oli oli-linegraph"></i> Annual Report 2015
@@ -549,9 +580,9 @@ window.addEventListener('load', function() {
                     <a href="#">Download PDF</a>
                   </div> -->
                 <!-- #####Begin carousel-->
-                <div data-margin="30" data-nav="true" data-loop="true" class="owl-carousel items owwwlab-theme nav-top-center">
+                <!-- <div data-margin="30" data-nav="true" data-loop="true" class="owl-carousel items owwwlab-theme nav-top-center"> -->
                   <!-- #####Begin journal element-->
-                   <a href="news-single.html" class="journal-el set-bg skin-green"><img src="assets/img/publications/grid/07.png" class="set-me">
+                   <!-- <a href="news-single.html" class="journal-el set-bg skin-green"><img src="assets/img/publications/grid/07.png" class="set-me">
                     <div class="contents">
                       <div class="header">
                         <h6>2025/10</h6>
@@ -575,9 +606,10 @@ window.addEventListener('load', function() {
                         </h6>
                         <h2 class="title">Postgraduate mixer at the Chelsea MA show</h2>
                       </div>
-                    </div></a>
+                    </div></a> -->
                   <!-- #####End journal element-->
-                   <!-- #####Begin journal element--><a href="news-single.html" class="journal-el set-bg"><img src="assets/img/publications/grid/08.png" class="set-me">
+                   <!-- #####Begin journal element-->
+                    <!-- <a href="news-single.html" class="journal-el set-bg"><img src="assets/img/publications/grid/08.png" class="set-me">
                     <div class="contents">
                       <div class="header">
                         <h6>2025/08</h6>
@@ -588,9 +620,10 @@ window.addEventListener('load', function() {
                         </h6>
                         <h2 class="title">Four papers and two demos accepted by VLDB 2025!</h2>
                       </div>
-                    </div></a>
+                    </div></a> -->
                   <!-- #####End journal element-->
-                  <!-- #####Begin journal element--><a href="news-single.html" class="journal-el set-bg skin-green"><img src="assets/img/publications/grid/06.png" class="set-me">
+                  <!-- #####Begin journal element-->
+                   <!-- <a href="news-single.html" class="journal-el set-bg skin-green"><img src="assets/img/publications/grid/06.png" class="set-me">
                     <div class="contents">
                       <div class="header">
                         <h6>2025/02</h6>
@@ -601,9 +634,10 @@ window.addEventListener('load', function() {
                         </h6>
                         <h2 class="title">Three papers and a demo accepted by SIGMOD 2025!</h2>
                       </div>
-                    </div></a>
+                    </div></a> -->
                   <!-- #####End journal element-->
-                  <!-- #####Begin journal element--><a href="news-single.html" class="journal-el set-bg"><img src="assets/img/publications/grid/05.png" class="set-me">
+                  <!-- #####Begin journal element-->
+                   <!-- <a href="news-single.html" class="journal-el set-bg"><img src="assets/img/publications/grid/05.png" class="set-me">
                     <div class="contents">
                       <div class="header">
                         <h6>2024/10</h6>
@@ -614,7 +648,7 @@ window.addEventListener('load', function() {
                         </h6>
                         <h2 class="title">One paper accepted by NeurIPS 2024!</h2>
                       </div>
-                    </div></a>
+                    </div></a> -->
                   <!-- #####End journal element-->
                   <!-- #####Begin journal element-->
                    <!-- <a href="news-single.html" class="journal-el set-bg skin-green"><img src="assets/img/publications/grid/06.png" class="set-me">
@@ -807,7 +841,7 @@ window.addEventListener('load', function() {
       	shuffle:"off",
       	autoHeight:"off",
       	fullScreenAlignForce:"off",
-      	fullScreenOffsetContainer: "",
+      	fullScreenOffsetContainer: "#header",
       	fullScreenOffset: "",
       	disableProgressBar:"on",
       	hideThumbsOnMobile:"off",
