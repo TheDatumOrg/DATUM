@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Open Benchmark Leaderboard</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+
+<!-- Header -->
+<header class="sticky top-0 bg-white border-b shadow-sm z-20">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+    <h1 class="text-xl font-bold">Open Benchmark Leaderboard</h1>
+    <select id="benchmarkSelect" class="px-3 py-2 border rounded-lg">
+      <option value="TSB-AutoAD">TSB-AutoAD</option>
+      <option value="TSB-AD">TSB-AD</option>
+      <option value="Forecasting">Forecasting</option>
+      <option value="Clustering">Clustering</option>
+      <option value="Classification">Classification</option>
+    </select>
+  </div>
+</header>
+
+<!-- Search + Filters -->
+<section class="max-w-7xl mx-auto px-4 py-4 grid md:grid-cols-12 gap-3">
+
+  <!-- Search + autocomplete -->
+  <div class="relative md:col-span-5">
+    <input id="searchInput" type="text" placeholder="Search models..."
+           autocomplete="off"
+           class="w-full px-3 py-2 border rounded-lg focus:outline-none">
+
+    <!-- autocomplete dropdown -->
+    <div id="autocompleteList"
+         class="absolute left-0 right-0 bg-white border border-gray-200 
+                rounded-lg shadow hidden max-h-48 overflow-y-auto z-50"></div>
+  </div>
+
+  <!-- Filters -->
+  <div class="md:col-span-7 grid grid-cols-2 md:grid-cols-4 gap-2">
+    <select id="frameworkFilter" class="px-3 py-2 border rounded-lg">
+      <option value="">All Frameworks</option>
+      <option value="PyTorch">PyTorch</option>
+      <option value="TensorFlow">TensorFlow</option>
+      <option value="JAX">JAX</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <select id="regimeFilter" class="px-3 py-2 border rounded-lg">
+      <option value="">All Regimes</option>
+      <option value="supervised">supervised</option>
+      <option value="unsupervised">unsupervised</option>
+      <option value="self-supervised">self-supervised</option>
+      <option value="zero-shot">zero-shot</option>
+      <option value="few-shot">few-shot</option>
+    </select>
+
+    <input id="yearMin" type="number" placeholder="Year ≥"
+           class="px-3 py-2 border rounded-lg">
+    <input id="yearMax" type="number" placeholder="Year ≤"
+           class="px-3 py-2 border rounded-lg">
+  </div>
+
+</section>
+
+<!-- Export line + chips -->
+<div class="max-w-7xl mx-auto px-4 mb-2 flex items-center gap-4 flex-wrap">
+
+  <button id="exportBtn"
+          class="px-3 py-2 border rounded-lg bg-white hover:bg-gray-100">
+    Export CSV
+  </button>
+
+  <span id="resultInfo" class="text-sm text-gray-500"></span>
+
+  <!-- chips moved here -->
+  <div id="searchTagContainer" class="flex flex-wrap gap-2 ml-auto"></div>
+
+</div>
+
+<!-- Table -->
+<div class="max-w-7xl mx-auto px-4 overflow-x-auto">
+<table id="leaderboardTable"
+       class="min-w-full border bg-white rounded-lg">
+  <thead class="bg-gray-100 text-sm">
+    <tr id="tableHead"></tr>
+  </thead>
+  <tbody id="tableBody" class="text-sm"></tbody>
+</table>
+</div>
+
+<!-- Pagination -->
+<div class="max-w-7xl mx-auto px-4 py-4 flex items-center gap-2">
+  <button id="prevPage" class="px-3 py-2 border rounded-lg bg-white">Prev</button>
+  <span id="pageInfo" class="text-sm"></span>
+  <button id="nextPage" class="px-3 py-2 border rounded-lg bg-white">Next</button>
+
+  <select id="pageSize" class="ml-auto px-3 py-2 border rounded-lg">
+    <option value="10">10 / page</option>
+    <option value="20">20 / page</option>
+    <option value="50">50 / page</option>
+  </select>
+</div>
+
+<script>
+/* ------------------------------------------------------
+   Config: Metrics Per Benchmark
+------------------------------------------------------ */
+const BENCHMARK_METRICS = {
+  "TSB-AutoAD": ["AUC-PR","AUC-ROC","F1"],
+  "TSB-AD": ["AUC-PR","AUC-ROC","F1"],
+  "Forecasting": ["sMAPE","RMSE"],
+  "Clustering": ["NMI","ARI"],
+  "Classification": ["Accuracy","F1","AUROC"]
+};
+
+/* ------------------------------------------------------
+   Demo Data
+------------------------------------------------------ */
+const DEMO_DATA = {
+  "TSB-AutoAD":[
+    {Model:"AAA",Link:"https://aaa.com",Framework:"PyTorch",Regime:"unsupervised",Year:2024,"AUC-PR":0.81,"AUC-ROC":0.94,F1:0.72},
+    {Model:"BBB",Link:"https://bbb.com",Framework:"TensorFlow",Regime:"supervised",Year:2023,"AUC-PR":0.77,"AUC-ROC":0.90,F1:0.68},
+    {Model:"CCC",Link:"https://ccc.com",Framework:"Other",Regime:"unsupervised",Year:2022,"AUC-PR":0.70,"AUC-ROC":0.88,F1:0.63}
+  ],
+  "TSB-AD":[
+    {Model:"AAA",Link:"https://aaa-tsb.com",Framework:"PyTorch",Regime:"unsupervised",Year:2024,"AUC-PR":0.75,"AUC-ROC":0.92,F1:0.70},
+    {Model:"BBB",Link:"https://bbb-tsb.com",Framework:"Other",Regime:"unsupervised",Year:2021,"AUC-PR":0.68,"AUC-ROC":0.86,F1:0.60}
+  ],
+  "Forecasting":[
+    {Model:"AAA",Link:"https://aaa-f.com",Framework:"PyTorch",Regime:"supervised",Year:2024,sMAPE:9.3,RMSE:0.18},
+    {Model:"BBB",Link:"https://bbb-f.com",Framework:"TensorFlow",Regime:"supervised",Year:2022,sMAPE:10.5,RMSE:0.21}
+  ],
+  "Clustering":[
+    {Model:"AAA",Link:"https://aaa-c.com",Framework:"Other",Regime:"unsupervised",Year:2019,NMI:0.58,ARI:0.41},
+    {Model:"BBB",Link:"https://bbb-c.com",Framework:"PyTorch",Regime:"unsupervised",Year:2023,NMI:0.62,ARI:0.45}
+  ],
+  "Classification":[
+    {Model:"AAA",Link:"https://aaa-cls.com",Framework:"PyTorch",Regime:"supervised",Year:2020,Accuracy:0.94,F1:0.93,AUROC:0.97},
+    {Model:"BBB",Link:"https://bbb-cls.com",Framework:"TensorFlow",Regime:"supervised",Year:2021,Accuracy:0.92,F1:0.91,AUROC:0.96}
+  ]
+};
+
+/* ------------------------------------------------------
+   State
+------------------------------------------------------ */
+let allData=[];
+let filteredData=[];
+let currentPage=1;
+let sortKey=null;
+let sortDir="desc";
+let selectedModels=new Set();
+
+/* ------------------------------------------------------
+   DOM
+------------------------------------------------------ */
+const tableHead=document.getElementById("tableHead");
+const tableBody=document.getElementById("tableBody");
+const searchInput=document.getElementById("searchInput");
+const autocompleteList=document.getElementById("autocompleteList");
+const searchTagContainer=document.getElementById("searchTagContainer");
+const resultInfo=document.getElementById("resultInfo");
+const pageInfo=document.getElementById("pageInfo");
+
+const benchmarkSelect=document.getElementById("benchmarkSelect");
+const frameworkFilter=document.getElementById("frameworkFilter");
+const regimeFilter=document.getElementById("regimeFilter");
+const yearMin=document.getElementById("yearMin");
+const yearMax=document.getElementById("yearMax");
+const pageSize=document.getElementById("pageSize");
+
+/* ------------------------------------------------------
+   Helpers
+------------------------------------------------------ */
+function getColumns(b){return ["Model","Link","Framework","Regime","Year",...BENCHMARK_METRICS[b]]}
+
+/* ------------------------------------------------------
+   Render Chips
+------------------------------------------------------ */
+function renderChips(){
+  searchTagContainer.innerHTML="";
+  selectedModels.forEach(model=>{
+    const chip=document.createElement("div");
+    chip.className="flex items-center gap-2 bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-sm";
+    chip.innerHTML=`<span>${model}</span>`;
+    const x=document.createElement("button");
+    x.textContent="×";
+    x.className="text-blue-600 hover:text-blue-800 font-bold";
+    x.onclick=()=>{selectedModels.delete(model);renderChips();renderTable();}
+    chip.appendChild(x);
+    searchTagContainer.appendChild(chip);
+  });
+}
+
+/* ------------------------------------------------------
+   Autocomplete
+------------------------------------------------------ */
+function updateAutocomplete(){
+  const q=searchInput.value.trim().toLowerCase();
+  if(!q){autocompleteList.classList.add("hidden");return;}
+
+  const models=[...new Set(allData.map(d=>d.Model))];
+  const matches=models.filter(m=>m.toLowerCase().includes(q));
+
+  if(matches.length==0){autocompleteList.classList.add("hidden");return;}
+
+  autocompleteList.innerHTML=matches.map(m=>`<div class="px-3 py-2 cursor-pointer">${m}</div>`).join("");
+  autocompleteList.classList.remove("hidden");
+
+  [...autocompleteList.children].forEach(div=>{
+    div.onclick=()=>{
+      const m=div.textContent.trim();
+      selectedModels.add(m);
+      searchInput.value="";
+      autocompleteList.classList.add("hidden");
+      renderChips();
+      renderTable();
+    };
+  });
+}
+
+searchInput.addEventListener("input",updateAutocomplete);
+document.addEventListener("click",e=>{
+  if(!autocompleteList.contains(e.target)&&e.target!==searchInput)
+    autocompleteList.classList.add("hidden");
+});
+
+/* ------------------------------------------------------
+   Table Rendering
+------------------------------------------------------ */
+function renderTable(){
+  const b=benchmarkSelect.value;
+  const cols=getColumns(b);
+
+  tableHead.innerHTML=cols.map(col=>{
+    const arrow=(sortKey===col?(sortDir==="asc"?"↑":"↓"):"");
+    return `<th data-col="${col}" class="px-3 py-2 text-left cursor-pointer">${col} ${arrow}</th>`;
+  }).join("");
+
+  filteredData=allData.filter(r=>{
+    if(selectedModels.size>0 && !selectedModels.has(r.Model)) return false;
+    if(frameworkFilter.value && r.Framework!==frameworkFilter.value) return false;
+    if(regimeFilter.value && r.Regime!==regimeFilter.value) return false;
+
+    if(yearMin.value && r.Year<Number(yearMin.value)) return false;
+    if(yearMax.value && r.Year>Number(yearMax.value)) return false;
+    return true;
+  });
+
+  if(sortKey){
+    filteredData.sort((a,b)=>{
+      const va=a[sortKey],vb=b[sortKey];
+      const na=Number(va),nb=Number(vb);
+      let cmp=(!isNaN(na)&&!isNaN(nb))?(na-nb):String(va).localeCompare(String(vb));
+      return sortDir==="asc"?cmp:-cmp;
+    });
+  }
+
+  const size=Number(pageSize.value);
+  const total=filteredData.length;
+  const totalPages=Math.max(1,Math.ceil(total/size));
+  currentPage=Math.min(currentPage,totalPages);
+
+  const page=filteredData.slice((currentPage-1)*size,(currentPage)*size);
+
+  tableBody.innerHTML=page.map(r=>`
+    <tr class="border-t">
+      ${cols.map(c=>{
+        if(c==="Link"&&r[c])
+          return `<td class="px-3 py-2"><a class="text-blue-600 underline" href="${r[c]}" target="_blank">Link</a></td>`;
+        return `<td class="px-3 py-2">${r[c]??""}</td>`;
+      }).join("")}
+    </tr>
+  `).join("");
+
+  resultInfo.textContent=`${total} results`;
+  pageInfo.textContent=`Page ${currentPage}/${totalPages}`;
+
+  document.querySelectorAll("#tableHead th").forEach(th=>{
+    th.onclick=()=>{
+      const col=th.dataset.col;
+      if(col===sortKey) sortDir=(sortDir==="asc"?"desc":"asc");
+      else{sortKey=col;sortDir="desc";}
+      renderTable();
+    };
+  });
+}
+
+/* ------------------------------------------------------
+   Export CSV
+------------------------------------------------------ */
+document.getElementById("exportBtn").onclick=()=>{
+  const b=benchmarkSelect.value;
+  const cols=getColumns(b);
+
+  const lines=[cols.join(",")];
+  filteredData.forEach(r=>{
+    lines.push(cols.map(c=>r[c]??"").join(","));
+  });
+
+  const blob=new Blob([lines.join("\n")],{type:"text/csv"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download=b+"_leaderboard.csv";
+  a.click();
+};
+
+/* ------------------------------------------------------
+   Pagination
+------------------------------------------------------ */
+document.getElementById("prevPage").onclick=()=>{currentPage=Math.max(1,currentPage-1);renderTable();}
+document.getElementById("nextPage").onclick=()=>{currentPage++;renderTable();}
+pageSize.onchange=()=>{currentPage=1;renderTable();}
+
+/* ------------------------------------------------------
+   Filters
+------------------------------------------------------ */
+[frameworkFilter,regimeFilter,yearMin,yearMax].forEach(el=>{
+  el.addEventListener("input",()=>{currentPage=1;renderTable();});
+});
+
+/* ------------------------------------------------------
+   Initial Load (Demo)
+------------------------------------------------------ */
+function loadDemo(b){
+  allData=DEMO_DATA[b].map(x=>({...x}));
+  selectedModels.clear();
+  renderChips();
+  searchInput.value="";
+  renderTable();
+}
+
+benchmarkSelect.onchange=()=>loadDemo(benchmarkSelect.value);
+loadDemo(benchmarkSelect.value);
+
+</script>
+</body>
+</html>
