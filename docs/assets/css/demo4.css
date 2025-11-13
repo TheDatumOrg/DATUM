@@ -31,7 +31,7 @@ ul#primary-menu ul.sub-menu{
     border-radius: 2px;
     margin: -4px 0 0 -2px;
 }
-#footer{
+/* #footer{
 	position: relative;
 	background-position: center bottom;
 	height: 90vh;
@@ -46,17 +46,17 @@ ul#primary-menu ul.sub-menu{
     left: 0;
     bottom: 0;
     width: 100%;
-}
+} */
 
 #header.nav-dark #nav li ul.sub-menu, #header.nav-dark #nav li.mega-menu .megamenu-wrapper, #header.nav-dark .cart .cart-inner, .nav-dark #header #nav li ul.sub-menu, .nav-dark #header #nav li.mega-menu .megamenu-wrapper, .nav-dark #header .cart .cart-inner{
 	background-color: #1F1E35;
 }
 
-#footer{
+/* #footer{
 
-}
+} */
 
-#footer:before {
+/* #footer:before {
     content: "";
     position: absolute;
     top: 0;
@@ -65,16 +65,16 @@ ul#primary-menu ul.sub-menu{
     height: 100%;
     z-index: -1;
     background: linear-gradient(to bottom, rgba(245,245,245,1) 0%, rgba(245,245,245,1) 20%, rgba(246,246,246,0.87) 68%, rgba(245,245,245,0.79) 100%);
-}
+} */
 
-@media (max-width: 992px) {
+/* @media (max-width: 992px) {
 	#footer{
 		height: auto;
 	}
 	#footer #footer-bar{
         position: static;
     }
-}
+} */
     
 
 
@@ -88,7 +88,7 @@ ul#primary-menu ul.sub-menu{
     line-height: 1; 
     color: #fff;
     position: relative; 
-    top: 60%; 
+    top: 55%; 
     text-align: center;
 }
 
@@ -100,7 +100,7 @@ ul#primary-menu ul.sub-menu{
     height: fit-content; /* Or a fixed height */
     width: fit-content;
     position: relative;
-    top: 70%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -135,16 +135,25 @@ ul#primary-menu ul.sub-menu{
     color: #fff;
 }
 
+
+
 .sponsors-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    padding: 20px;
-    flex-wrap: wrap;
-}
-.sponsor img {
-    width: 150px; /* Adjust size as needed */
-    height: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 40px;              
+  align-items: center;     
+  justify-items: center;   
+  padding: 30px 0;
 }
 
+.sponsor img {
+  max-width: 140px;
+  height: auto;
+  filter: grayscale(20%) brightness(0.95);
+  transition: all 0.3s ease;
+}
+
+.sponsor img:hover {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.05);
+}
